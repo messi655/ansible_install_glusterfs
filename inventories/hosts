@@ -1,0 +1,15 @@
+server01 ansible_ssh_host=192.168.1.160 ansible_ssh_port=22
+server02 ansible_ssh_host=192.168.1.161 ansible_ssh_port=22
+server03 ansible_ssh_host=192.168.1.162 ansible_ssh_port=22
+
+[gluster_server]
+server01
+server02
+server03
+
+[gluster_client]
+server01
+server02
+server03
+
+

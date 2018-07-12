@@ -1,0 +1,9 @@
+---
+- name: Install epel-release repo
+  yum: name=epel-release state=present
+
+- name: Install gluster client glusterfs-client
+  yum: name=glusterfs-client state=present
+
+- name: Create mount point
+  file: path={{ gluster_client_mount }} state=directory

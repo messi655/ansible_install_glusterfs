@@ -1,0 +1,9 @@
+---
+# Mount configuration.
+- name: Ensure the Gluster volume is mounted.
+  mount:
+    name: "{{ gluster_client_mount }}"
+    src: "{{ groups.gluster_server[0] }}:/{{ gluster_brick_name }}"
+    fstype: glusterfs
+    opts: "defaults,_netdev"
+    state: mounted

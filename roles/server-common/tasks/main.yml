@@ -1,0 +1,19 @@
+---
+- name: Install epel-release repo
+  yum: name=epel-release state=present
+
+- name: Install centos-release-gluster
+  yum: name=centos-release-gluster state=present
+
+- name: Install glusterfs-server
+  yum: name=glusterfs-server state=present
+
+- name: Start glusterfs service
+  systemd: name=glusterd.service state=started
+
+- name: Enable glusterfs service auto start
+  service: name=glusterd.service state=running enabled=yes
+
+- name: Create folder that will storage data to share
+  file: path={{ gluster_brick_dir }} state=directory
+

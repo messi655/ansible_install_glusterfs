@@ -1,0 +1,15 @@
+---
+- hosts: gluster_server
+  remote_user: username
+  sudo: yes
+  roles:
+    - { role: glusterfs/server-common, tags: ['server_common'] }
+    - { role: glusterfs/server-config, tags: ['server_config'] }
+
+- hosts: gluster_client
+  remote_user: root
+  sudo: yes
+  roles:
+    - { role: glusterfs/client-common, tags: ['client_common'] }
+    - { role: glusterfs/client-config, tags: ['client_config'] }
+

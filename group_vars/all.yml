@@ -1,0 +1,4 @@
+# Gluster configure
+gluster_brick_dir: /data/server
+gluster_brick_name: digitaljourney
+gluster_client_mount: /data/client
